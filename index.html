@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Element</title>
+  <style>
+    h1 {
+      background-color: rgb(154, 130, 94);
+      color: yellowgreen;
+    }
+
+    body {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>
+    This is a heading Element
+  </h1>
+
+  <script>
+
+    let heading = document.getElementsByTagName('h1')[0];
+    let body = document.getElementsByTagName('body')[0];
+    function changeBackgroundColor(color) {
+      heading.style.backgroundColor = `${color}`;
+    }
+
+    function getRandomColor(changeBgColor) {
+      let num1 = Math.floor(Math.random() * 200);
+      let num2 = Math.floor(Math.random() * 200);
+      let num3 = Math.floor(Math.random() * 200);
+      let color = `rgb(${num1},${num2},${num3})`
+      changeBgColor(color);
+    }
+    body.addEventListener('click', () => {
+      let color = getRandomColor(changeBackgroundColor);
+    })
+  </script>
+</body>
+
+</html>
